@@ -1,0 +1,31 @@
+<h3>翻译列表</h3>
+
+<table class="table">
+  <tr>
+    <th>书名</th>
+    <th>作者</th>
+    <th>描述</th>
+
+    <% if user_signed_in? %>
+      <th>编辑</th>
+      <th>删除</th>
+    <% end %>
+  </tr>
+
+<% @books.each do |book| %>
+  <tr>
+    <td><%= link_to book.name, book %></td>
+    <td><%= book.author %></td>
+    <td><%= book.desc[0..30] %></td>
+    
+    <% if user_signed_in? %>
+      <td><%= link_to 'Edit', edit_book_path(book) %></td>
+      <td><% link_to 'Destroy', book, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新建', new_book_path %>

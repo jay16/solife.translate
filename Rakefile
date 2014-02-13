@@ -6,4 +6,4 @@ include Rake::DSL if defined?(Rake::DSL)
 require File.expand_path('../config/application', __FILE__)
 
 
-FocusFruit::Application.load_tasks
+SolifeTranslate::Application.load_tasks

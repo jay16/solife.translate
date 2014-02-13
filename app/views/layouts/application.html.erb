@@ -4,7 +4,7 @@
   <%= javascript_include_tag "application" %>
   <%= stylesheet_link_tag "application" %>
 
-  <title>翻译</title>
+  <title>翻译达人</title>
 
 
   <% if mobile? %>
@@ -29,15 +29,23 @@
 
 <body>
 <div class="container-fluid" style="margin:42px 2px 2px 2px;padding: 0px;">
-    <div class="row-fluid" style="margin-left:0px;">
-    <div class="span12">
-       <%= yield %> 
+  <div class="row-fluid" style="margin-left:0px;">
+
+      <div class="span8 offset2">
+	 <%= yield %> 
       <div>
-	  <div style="color:white;background:black;padding:8px" class="navbar-fixed-top">
-	    翻译[Ruby 元编程]
-	  </div>
+
+      <div style="color:white;background:black;padding:8px" class="navbar-fixed-top">
+        <div class="span8 offset2" style="min-height:10px;">
+	  翻译达人
+
+	  <span class="right">
+	    <%= current_user.email if user_signed_in? %>
+	  </span>
+	</div>
       </div>
-    </div>
+
+  </div>
 </div>
 </body>
 </html>

@@ -1,0 +1,26 @@
+<%= simple_form_for(@book, class: "span6") do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+
+    <%= f.input :name, wrapper: :prepend, label: false do %>
+      <%= content_tag :span, content_tag(:span, "书名", class: ""), class: "add-on" %>
+      <%= f.input_field :name, placeholder: "书籍名称", class: "span6", autofocus: true %>
+    <% end %>
+
+    <%= f.input :author, wrapper: :prepend, label: false do %>
+      <%= content_tag :span, content_tag(:span, "作者", class: ""), class: "add-on" %>
+      <%= f.input_field :author, placeholder: "作者名称", class: "span6", autofocus: true %>
+    <% end %>
+
+    <%= f.input :desc, wrapper: :prepend, label: false do %>
+      <%= content_tag :span, content_tag(:span, "描述", class: ""), class: "add-on" %>
+      <%= f.input_field :desc, placeholder: "书籍描述", class: "span6", autofocus: true, style: "height:200px;" %>
+    <% end %>
+
+    <div class="control-group">
+      <div class="controls">
+          <%= f.button :submit, "创建", class: "btn btn-primary " %>
+      </div>
+    </div>
+<% end %>

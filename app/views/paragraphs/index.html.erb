@@ -1,0 +1,31 @@
+<h1>Listing paragraphs</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Index</th>
+    <th>Content</th>
+    <th>Markdown</th>
+    <th>Translate</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @paragraphs.each do |paragraph| %>
+  <tr>
+    <td><%= paragraph.title_id %></td>
+    <td><%= paragraph.index %></td>
+    <td><%= paragraph.content %></td>
+    <td><%= paragraph.markdown %></td>
+    <td><%= paragraph.translate %></td>
+    <td><%= link_to 'Show', paragraph %></td>
+    <td><%= link_to 'Edit', edit_paragraph_path(paragraph) %></td>
+    <td><%= link_to 'Destroy', paragraph, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Paragraph', new_paragraph_path %>

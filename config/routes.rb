@@ -1,11 +1,11 @@
 #encoding: utf-8
-FocusFruit::Application.routes.draw do
+SolifeTranslate::Application.routes.draw do
+  root :to => "home#index"
 
-  devise_for :users
+  resources :books
+  resources :titles
+  resources :paragraphs
 
-  get "home/index"
-
-=begin
   #权限管理
   devise_for :users,
     :controllers => {
@@ -18,8 +18,6 @@ FocusFruit::Application.routes.draw do
     get "/users/sign_out", :to => "sessions#destroy", :as => :destroy_user_session
     get "/users/logout",   :to => "sessions#destroy"
   end
-=end
-  root :to => "home#index"
 
 
   match ":controller(/:action(/:id))(.:format)"

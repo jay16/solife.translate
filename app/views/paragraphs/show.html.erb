@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @paragraph.title_id %>
+</p>
+
+<p>
+  <b>Index:</b>
+  <%= @paragraph.index %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @paragraph.content %>
+</p>
+
+<p>
+  <b>Markdown:</b>
+  <%= @paragraph.markdown %>
+</p>
+
+<p>
+  <b>Translate:</b>
+  <%= @paragraph.translate %>
+</p>
+
+
+<%= link_to 'Edit', edit_paragraph_path(@paragraph) %> |
+<%= link_to 'Back', paragraphs_path %>

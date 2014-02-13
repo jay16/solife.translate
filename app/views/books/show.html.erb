@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>书名:</b>
+  <%= @book.name %>
+</p>
+
+<p>
+  <b>作者:</b>
+  <%= @book.author %>
+</p>
+
+<p>
+  <b>描述:</b><br>
+
+  <%= @book.desc.html_safe %>
+</p>
+
+
+
+<%= link_to '编辑', edit_book_path(@book) if user_signed_in? %>
+<%= link_to '返回', books_path %>
