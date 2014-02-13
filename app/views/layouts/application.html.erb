@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "application" %>
+
+  <title>翻译</title>
+
+
+  <% if mobile? %>
+    <%= stylesheet_link_tag "mobile" %>
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta content='True' name='HandheldFriendly' />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="apple-touch-icon-precomposed" href="<%= asset_path("favicon.so.ico") %>" />
+    <style>
+      body {
+        max-width: 1000px;
+	min-width:100px;
+      }
+    </style>
+
+    <input type="hidden" name="runtime" value="mobile" id="hidden_runtime" />
+  <% else %>
+    <input type="hidden" name="runtime" value="pc" id="hidden_runtime" />
+  <% end %>
+
+</head>
+
+<body>
+<div class="container-fluid" style="margin:42px 2px 2px 2px;padding: 0px;">
+    <div class="row-fluid" style="margin-left:0px;">
+    <div class="span12">
+       <%= yield %> 
+      <div>
+	  <div style="color:white;background:black;padding:8px" class="navbar-fixed-top">
+	    翻译[Ruby 元编程]
+	  </div>
+      </div>
+    </div>
+</div>
+</body>
+</html>
+
